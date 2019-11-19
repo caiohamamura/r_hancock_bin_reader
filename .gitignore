@@ -1,0 +1,7 @@
+build
+.R*
+*.o
+*.obj
+*.dll
+**/target/*
+*.lock

@@ -1,0 +1,12 @@
+[package]
+name = "rustlib"
+version = "0.1.0"
+
+[dependencies]
+rustr = { git = "https://github.com/caiohamamura/rustr" }
+tls_read_hancock_bin = "0.1.1"
+
+
+[lib]
+name = "rustlib"
+crate-type = ["staticlib","rlib"]
