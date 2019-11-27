@@ -5,3 +5,4 @@ build
 *.dll
 **/target/*
 *.lock
+.Rproj.user

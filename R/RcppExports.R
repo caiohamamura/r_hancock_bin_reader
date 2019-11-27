@@ -2,10 +2,10 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 sum_cpp <- function(vec) {
-    .Call('_MyFirstRust_sum_cpp', PACKAGE = 'MyFirstRust', vec)
+    .Call('_HancockBinReader_sum_cpp', PACKAGE = 'HancockBinReader', vec)
 }
 
 cpp_add_one <- function(vec) {
-    .Call('_MyFirstRust_cpp_add_one', PACKAGE = 'MyFirstRust', vec)
+    .Call('_HancockBinReader_cpp_add_one', PACKAGE = 'HancockBinReader', vec)
 }
 

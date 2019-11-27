@@ -1,11 +1,11 @@
-Package: MyFirstRust
+Package: HancockBinReader
 Type: Package
 Title: What the package does (short line)
 Version: 1.0
 Date: 2019-11-14
 Author: Caio Hamamura
 Maintainer: Caio Hamamura <caiohamamura@gmail.com.com>
-Description: More about what it does (maybe more than one line)
+Description: Reads the terrestrial laser scanning Hancock's binary format to DataFrame.
 Depends: Rcpp
 LinkingTo: Rcpp
 License: MIT

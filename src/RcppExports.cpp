@@ -7,7 +7,7 @@ using namespace Rcpp;
 
 // sum_cpp
 int sum_cpp(Rcpp::IntegerVector vec);
-RcppExport SEXP _MyFirstRust_sum_cpp(SEXP vecSEXP) {
+RcppExport SEXP _HancockBinReader_sum_cpp(SEXP vecSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -18,7 +18,7 @@ END_RCPP
 }
 // cpp_add_one
 Rcpp::IntegerVector cpp_add_one(Rcpp::IntegerVector vec);
-RcppExport SEXP _MyFirstRust_cpp_add_one(SEXP vecSEXP) {
+RcppExport SEXP _HancockBinReader_cpp_add_one(SEXP vecSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -28,20 +28,16 @@ BEGIN_RCPP
 END_RCPP
 }
 
-RcppExport SEXP c_add_one(SEXP);
-RcppExport SEXP c_sum2(SEXP);
-RcppExport SEXP MyFirstRust_read_hancock_bin(SEXP);
+RcppExport SEXP HancockBinReader_read_hancock_bin(SEXP);
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_MyFirstRust_sum_cpp", (DL_FUNC) &_MyFirstRust_sum_cpp, 1},
-    {"_MyFirstRust_cpp_add_one", (DL_FUNC) &_MyFirstRust_cpp_add_one, 1},
-    {"c_add_one",                    (DL_FUNC) &c_add_one,                    1},
-    {"c_sum2",                       (DL_FUNC) &c_sum2,                       1},
-    {"MyFirstRust_read_hancock_bin", (DL_FUNC) &MyFirstRust_read_hancock_bin, 1},
+    {"_HancockBinReader_sum_cpp", (DL_FUNC) &_HancockBinReader_sum_cpp, 1},
+    {"_HancockBinReader_cpp_add_one", (DL_FUNC) &_HancockBinReader_cpp_add_one, 1},
+    {"HancockBinReader_read_hancock_bin", (DL_FUNC) &HancockBinReader_read_hancock_bin, 1},
     {NULL, NULL, 0}
 };
 
-RcppExport void R_init_MyFirstRust(DllInfo *dll) {
+RcppExport void R_init_HancockBinReader(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
 }

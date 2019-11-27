@@ -4,4 +4,4 @@
 #include <R.h>
 
 extern SEXP rustr_read_hancock_bin(SEXP input);
-SEXP MyFirstRust_read_hancock_bin(SEXP input){ return(rustr_read_hancock_bin(input));}
+SEXP HancockBinReader_read_hancock_bin(SEXP input){ return(rustr_read_hancock_bin(input));}
