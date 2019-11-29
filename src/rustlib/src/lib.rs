@@ -10,6 +10,12 @@ pub use rustr::*;
 pub fn read_hancock_bin(input: String) -> RResult<SEXP> {
 	let mut reader: HancockReader = HancockReader::new(input).unwrap();
 	r_message(&format!("Number of beams: {}", reader.n_beams));
+
+	let mut xoff = reader.xoff;
+	let mut yoff = reader.yoff;
+	let mut zoff = reader.zoff;
+
+	let mut offsets = vec![xoff, yoff, zoff];
 	let mut zen = Vec::with_capacity(reader.n_beams);
 	let mut az = Vec::with_capacity(reader.n_beams);
 	let mut x = Vec::with_capacity(reader.n_beams);
@@ -39,6 +45,12 @@ pub fn read_hancock_bin(input: String) -> RResult<SEXP> {
 
 	unsafe {
 
+		let mut offsets_df = rlist!(
+			offsets ~ offsets
+		);
+		offsets_df.as_data_frame()?;
+
+
 		let mut beams_df = rlist!(
 			zen ~ zen,
 			az ~ az,
@@ -59,6 +71,7 @@ pub fn read_hancock_bin(input: String) -> RResult<SEXP> {
 		returns_df.as_data_frame()?;
 
 		let list_all_m = rlist!(
+			offsets ~ offsets_df,
 			beams ~ beams_df, 
 			returns ~ returns_df
 		);
